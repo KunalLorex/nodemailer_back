@@ -66,8 +66,9 @@ app.post('/users',(req,res)=>{
      
       });
 });
+const PORT = process.env.PORT || 5000
  
-app.listen(5000, function(err){
+app.listen(PORT, function(err){
   if (err) console.log("Error in server setup")
-  console.log("Server listening on Port", 5000);
+  console.log("Server listening on Port");
 })
