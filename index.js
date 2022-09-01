@@ -18,6 +18,10 @@ app.use((req, res, next) => {
   );
   next();
 });
+
+app.get("/api", (req, res) => {
+  res.json("Hello");
+});
  
 app.post('/users',(req,res)=>{
  
