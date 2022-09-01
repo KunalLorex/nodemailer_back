@@ -8,6 +8,16 @@ app.use(cors())
 const buildPath = path.join(__dirname, '..', 'build');
 app.use(express.json());
 app.use(express.static(buildPath)); 
+
+
+app.use((req, res, next) => {
+  res.setHeader("Access-Control-Allow-Origin", "https://yoursite.com");
+  res.header(
+    "Access-Control-Allow-Headers",
+    "Origin, X-Requested-With, Content-Type, Accept"
+  );
+  next();
+});
  
 app.post('/users',(req,res)=>{
  
@@ -19,6 +29,7 @@ app.post('/users',(req,res)=>{
           pass: 'mqnlmtuanzqdrjpt'
         }
     });
+ 
  
     var mailOptions = {
         from: "testingtheera@gmail.com",// sender address
