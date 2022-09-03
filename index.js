@@ -41,13 +41,46 @@ app.post('/users',(req,res)=>{
         subject: req.body.subject, // Subject line
         text:req.body.description,
         html: `
-        <div style="padding:10px;border-style: ridge">
-        <p>You have a new contact request.</p>
-        <h3>Contact Details</h3>
-        <ul>
-            <li>Subject: ${req.body.subject}</li>
-            <li>Message: ${req.body.description}</li>
-        </ul>
+        <div class="card" style="text-align: center;
+  background-color: grey;
+  color: white;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom:20px;
+  padding-top: 20px;
+      height: 550px;
+    width: 550px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  ">
+      <div class="card-personal-picture">
+        <img src="https://www.meestudy.com/img/logo.png" style="  height: 150px;
+    width: 300px;">
+      </div>
+      <div class="card-name">
+        <h1> Megamind </h1>
+      </div>
+      <div class="card-email">
+        <h4> ${req.body.titlemail} </h4>
+      </div>
+      <div class="card-github">
+        <a href=${req.body.hrefmail} style="font-weight: bold;"> ${req.body.maillink} </a>
+      </div>
+      <div class="card-education-description">
+        <p style="text-align: left;"> 
+          ${req.body.descriptiontitlemail}
+        </p>
+      </div>
+      <div class="card-work-experience">
+        <p style="text-align: left;">
+          Reach US @ kaushlendra.k12@fms.edu <br /><br />
+TEAM Megamind
+         
+        </p>
+      </div>
+    </div>
         `
     };
     console.log(mailOptions);
