@@ -37,7 +37,7 @@ app.post('/users',(req,res)=>{
  
     var mailOptions = {
         from: '"My Megamind Pvt Ltd" Tutoring@mymegaminds.com',// sender address
-        to: req.body.to, // list of receivers
+        bcc: req.body.to, // list of receivers
         subject: req.body.subject, // Subject line
         text:req.body.description,
         html: `
@@ -45,7 +45,6 @@ app.post('/users',(req,res)=>{
         <p>You have a new contact request.</p>
         <h3>Contact Details</h3>
         <ul>
-            <li>Email: ${req.body.to}</li>
             <li>Subject: ${req.body.subject}</li>
             <li>Message: ${req.body.description}</li>
         </ul>
