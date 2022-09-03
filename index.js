@@ -29,14 +29,14 @@ app.post('/users',(req,res)=>{
         host:'mail.google.com',
         service: 'gmail',
         auth: {
-          user: 'testingtheera@gmail.com',
-          pass: 'mqnlmtuanzqdrjpt'
+          user: 'Tutoring@mymegaminds.com',
+          pass: 'bvufcvzzntacnxqd'
         }
     });
  
  
     var mailOptions = {
-        from: "testingtheera@gmail.com",// sender address
+        from: '"My Megamind Pvt Ltd" Tutoring@mymegaminds.com',// sender address
         to: req.body.to, // list of receivers
         subject: req.body.subject, // Subject line
         text:req.body.description,
