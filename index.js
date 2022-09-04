@@ -30,10 +30,10 @@ app.post('/users',(req,res)=>{
         host:'mail.google.com',
         service: 'gmail',
         auth: {
-          // user: 'Tutoring@mymegaminds.com',
-          // pass: 'bvufcvzzntacnxqd'
-          user: 'guptakunal738@gmail.com',
-          pass: 'xqsbfybyuvhbjrrx'
+          user: 'Tutoring@mymegaminds.com',
+          pass: 'bvufcvzzntacnxqd'
+          // user: 'guptakunal738@gmail.com',
+          // pass: 'xqsbfybyuvhbjrrx'
         }
     });
  
@@ -48,7 +48,7 @@ app.post('/users',(req,res)=>{
  
 
     var mailOptions = {
-        from: '"My Megamind Pvt Ltd" guptakunal738@gmail.com',// sender address
+        from: '"My Megamind Pvt Ltd" Tutoring@mymegaminds.com',// sender address
         bcc: req.body.to, // list of receivers
         subject: req.body.subject, // Subject line
         text:req.body.description,
