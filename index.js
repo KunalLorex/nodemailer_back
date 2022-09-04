@@ -32,8 +32,7 @@ app.post('/users',(req,res)=>{
         auth: {
           user: 'Tutoring@mymegaminds.com',
           pass: 'bvufcvzzntacnxqd'
-          // user: 'guptakunal738@gmail.com',
-          // pass: 'xqsbfybyuvhbjrrx'
+         
         }
     });
  
@@ -48,16 +47,18 @@ app.post('/users',(req,res)=>{
  
 
     var mailOptions = {
-        from: '"My Megamind Pvt Ltd" Tutoring@mymegaminds.com',// sender address
+        from: '"My Megamind Pvt Ltd" Tutoring@mymegaminds.com',
+        to:"",// sender address
         bcc: req.body.to, // list of receivers
         subject: req.body.subject, // Subject line
         text:req.body.description,
         template:'index',
         context:{
-          titlemail:req.body.titlemail, // replace {{name}} with Adebola
+          titlemail:req.body.titlemail, 
           hrefmail: req.body.hrefmail,
           maillink:req.body.maillink,
-          descriptiontitlemail:req.body.descriptiontitlemail,// replace {{company}} with My Company
+          emaillinkmsg:req.body.emaillinkmsg,
+          descriptiontitlemail:req.body.descriptiontitlemail,
       }
     };
     console.log(mailOptions);
