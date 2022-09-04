@@ -1,0 +1,137 @@
+{{!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="card" style="text-align: center;
+  background-color: grey;
+  color: white;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom:20px;
+  padding-top: 20px;
+      height: 550px;
+    width: 550px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  ">
+      <div class="card-personal-picture">
+        <img src="https://www.meestudy.com/img/logo.png" style="  height: 150px;
+    width: 300px;">
+      </div>
+      <div class="card-name">
+        <h1> Megamind </h1>
+      </div>
+      <div class="card-email">
+        <h4> ${req.body.titlemail} </h4>
+      </div>
+      <div class="card-github">
+        <a href=${req.body.hrefmail} style="font-weight: bold;"> ${req.body.maillink} </a>
+      </div>
+      <div class="card-education-description">
+        <p style="text-align: left;"> 
+          ${req.body.descriptiontitlemail}
+        </p>
+      </div>
+      <div class="card-work-experience">
+        <p style="text-align: left;">
+          Reach US @ kaushlendra.k12@fms.edu <br /><br />
+TEAM Megamind
+         
+        </p>
+      </div>
+    </div>
+</body>
+</html> --}}
+<!DOCTYPE html>
+<html><head>
+  <link spreadsheet="./style.scss">
+</head>
+<body>
+<div class="card" style="text-align: center;
+  background-color: grey;
+  color: white;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom:20px;
+  padding-top: 20px;
+      height: 550px;
+    width: 550px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  ">
+      <div class="card-personal-picture">
+        <img src="https://www.meestudy.com/img/logo.png" style="  height: 150px;
+    width: 300px;">
+      </div>
+      <div class="card-name">
+        <h1> Megamind </h1>
+      </div>
+      <div class="card-email">
+        <h4> {{titlemail}} </h4>
+      </div>
+      <div class="card-github">
+        <a href={{hrefmail}} style="font-weight: bold;"> {{maillink}} </a>
+      </div>
+      <div class="card-education-description">
+        <p style="text-align: left;"> 
+          {{descriptiontitlemail}}
+        </p>
+      </div>
+      <div class="card-work-experience">
+        <p style="text-align: left;">
+          Reach US @ kaushlendra.k12@fms.edu <br /><br />
+TEAM Megamind
+         
+        </p>
+      </div>
+    </div>
+
+    <div class="bicycle-container">
+  <div class="wheel back-wheel">
+    <div class="tire"></div>
+    <div class="rim"></div>
+    <div class="spokes"></div>
+    <div class="spokes"></div>
+    <div class="hub"></div>
+  </div>
+  <div class="wheel front-wheel">
+    <div class="tire"></div>
+    <div class="rim"></div>
+    <div class="spokes"></div>
+    <div class="spokes"></div>
+    <div class="hub"></div>
+  </div>
+  <div class="gear">
+    <div class="gear-red"></div>
+    <div class="tube pedal-tube"></div>
+    <div class="pedal"></div>
+  </div>
+  <div class="tube chain-tube"></div>
+  <div class="tube seat-tube-back"></div>
+  <div class="tube seat-tube-front"></div>
+  <div class="tube seat-tube-post"></div>
+  <div class="tube top-tube"></div>
+  <div class="tube top-handlebar-tube"></div>
+  <div class="tube top-handlebar-tube2"></div>
+  <div class="tube down-tube"></div>
+  <div class="tube head-tube"></div>
+  <div class="tube head-tube-post"></div>
+  <div class="saddle"></div>
+  <div class="handlebars"></div>
+</div>
+<div class="ground-container">
+  <div class="ground ground1"></div>
+  <div class="ground ground2"></div>
+  <div class="ground ground3"></div>
+</div>
+</body>
+</html>

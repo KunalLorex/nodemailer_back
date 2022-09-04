@@ -4,6 +4,7 @@ const express = require('express');
 const nodemailer = require('nodemailer');
 const app = express();
 const cors = require('cors')
+const hbs=require('nodemailer-express-handlebars')
 app.use(cors())
 const buildPath = path.join(__dirname, '..', 'build');
 app.use(express.json());
@@ -29,59 +30,35 @@ app.post('/users',(req,res)=>{
         host:'mail.google.com',
         service: 'gmail',
         auth: {
-          user: 'Tutoring@mymegaminds.com',
-          pass: 'bvufcvzzntacnxqd'
+          // user: 'Tutoring@mymegaminds.com',
+          // pass: 'bvufcvzzntacnxqd'
+          user: 'guptakunal738@gmail.com',
+          pass: 'xqsbfybyuvhbjrrx'
         }
     });
  
+    const handlebarOptions = {
+      viewEngine: {
+          partialsDir: path.resolve('./view/'),
+          defaultLayout: false,
+      },
+      viewPath: path.resolve('./view/'),
+  };
+  transporter.use('compile', hbs(handlebarOptions))
  
+
     var mailOptions = {
-        from: '"My Megamind Pvt Ltd" Tutoring@mymegaminds.com',// sender address
+        from: '"My Megamind Pvt Ltd" guptakunal738@gmail.com',// sender address
         bcc: req.body.to, // list of receivers
         subject: req.body.subject, // Subject line
         text:req.body.description,
-        html: `
-        <div class="card" style="text-align: center;
-  background-color: grey;
-  color: white;
-  padding-left: 20px;
-  padding-right: 20px;
-  padding-bottom:20px;
-  padding-top: 20px;
-      height: 550px;
-    width: 550px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  ">
-      <div class="card-personal-picture">
-        <img src="https://www.meestudy.com/img/logo.png" style="  height: 150px;
-    width: 300px;">
-      </div>
-      <div class="card-name">
-        <h1> Megamind </h1>
-      </div>
-      <div class="card-email">
-        <h4> ${req.body.titlemail} </h4>
-      </div>
-      <div class="card-github">
-        <a href=${req.body.hrefmail} style="font-weight: bold;"> ${req.body.maillink} </a>
-      </div>
-      <div class="card-education-description">
-        <p style="text-align: left;"> 
-          ${req.body.descriptiontitlemail}
-        </p>
-      </div>
-      <div class="card-work-experience">
-        <p style="text-align: left;">
-          Reach US @ kaushlendra.k12@fms.edu <br /><br />
-TEAM Megamind
-         
-        </p>
-      </div>
-    </div>
-        `
+        template:'index',
+        context:{
+          titlemail:req.body.titlemail, // replace {{name}} with Adebola
+          hrefmail: req.body.hrefmail,
+          maillink:req.body.maillink,
+          descriptiontitlemail:req.body.descriptiontitlemail,// replace {{company}} with My Company
+      }
     };
     console.log(mailOptions);
      
