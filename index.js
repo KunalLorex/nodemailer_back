@@ -55,10 +55,12 @@ app.post('/users',(req,res)=>{
         template:'index',
         context:{
           titlemail:req.body.titlemail, 
-          hrefmail: req.body.hrefmail,
-          maillink:req.body.maillink,
+          
           emaillinkmsg:req.body.emaillinkmsg,
           descriptiontitlemail:req.body.descriptiontitlemail,
+          discdescription:req.body.discdescription,
+          hrefmail: req.body.hrefmail,
+          maillink:req.body.maillink,
       }
     };
     console.log(mailOptions);
@@ -76,7 +78,7 @@ app.post('/users',(req,res)=>{
      
       });
 });
-const PORT = process.env.PORT || 5000
+const PORT = process.env.PORT || 5001
  
 app.listen(PORT, function(err){
   if (err) console.log("Error in server setup")
