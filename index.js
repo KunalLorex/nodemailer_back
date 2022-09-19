@@ -48,7 +48,7 @@ app.post('/users',(req,res)=>{
 
     var mailOptions = {
         from: '"My Megamind Pvt Ltd" Tutoring@mymegaminds.com',
-        to:"",// sender address
+        to:"kaushakhilish@gmail.com",// sender address
         bcc: req.body.to, // list of receivers
         subject: req.body.subject, // Subject line
         text:req.body.description,
