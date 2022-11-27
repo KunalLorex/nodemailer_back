@@ -30,8 +30,8 @@ app.post('/users',(req,res)=>{
         host:'mail.google.com',
         service: 'gmail',
         auth: {
-          user: 'Tutoring@mymegaminds.com',
-          pass: 'bvufcvzzntacnxqd'
+          user: 'kaushakhilish@gmail.com',
+          pass: 'okqwnotejopyidnt'
          
         }
     });
